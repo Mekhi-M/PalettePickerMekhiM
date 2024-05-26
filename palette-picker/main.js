@@ -1,24 +1,34 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import "./style.css";
+import { initPaletteCards } from "./js/dom-helpers";
+import {
+  handlePaletteSubmit,
+  handleDeletePalette,
+  handleColorHexCopy,
+  handleBorderControlButton,
+} from "./js/event-handlers";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const main = () => {
+  initPaletteCards();
 
-setupCounter(document.querySelector('#counter'))
+  // form submission
+  document
+    .querySelector("#palette-form")
+    .addEventListener("submit", handlePaletteSubmit);
+
+  // palette deletion
+  document
+    .querySelector("#palettes-list")
+    .addEventListener("click", handleDeletePalette);
+
+  // color hex copying
+  document
+    .querySelector("#palettes-list")
+    .addEventListener("click", handleColorHexCopy);
+
+  // change the color of the sample border
+  document
+    .querySelector("#palettes-list")
+    .addEventListener("click", handleBorderControlButton);
+};
+
+main();

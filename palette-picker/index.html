@@ -4,10 +4,57 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Palette Picker</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <main class="column-flex-box">
+        <h1>Palette Picker</h1>
+        <form aria-labelledby="palette-form-header" id="palette-form"
+        class="column-flex-box dark-gray-bg">
+          <h2 id="palette-form-header">Add a Palette!</h2>
+
+          <div class="flex-box">
+            <label for="palette-name-input">Palette Title:</label>
+            <input type="text" id="palette-name-input" name="paletteName" placeholder="ex. Grayscale!!!" required>
+          </div>
+
+          <div class="flex-box">
+            <label for="color-one-input">Color #1</label>
+            <input type="color" id="color-one-input" name="colorOneHex" value="#000000">
+          </div>
+
+          <div class="flex-box">
+            <label for="color-two-input">Color #2</label>
+            <input type="color" id="color-two-input" name="colorTwoHex" value="#808080">
+          </div>
+
+          <div class="flex-box">
+            <label for="color-three-input">Color #3</label>
+            <input type="color" id="color-three-input" name="colorThreeHex" value="#ffffff">
+          </div>
+
+          <fieldset>
+            <legend>Temperature:</legend>
+            <input type="radio" name="colorTemp" id="warm" value="warm">
+            <label for="warm">Warm</label>
+
+            <input type="radio" name="colorTemp" id="neutral" value="neutral" checked>
+            <label for="neutral">Neutral</label>
+            
+            <input type="radio" name="colorTemp" id="cool" value="cool">
+            <label for="cool">Cool</label>
+          </fieldset>
+
+          <button>Create a palette</button>
+        </form>
+
+        <h2 id="palette-list-header">Palettes</h2>
+        <section aria-labelledby="palette-list-header">
+          <ul id="palettes-list" class="flex-box"></ul>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
