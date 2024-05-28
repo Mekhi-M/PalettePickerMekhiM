@@ -10,7 +10,3 @@ export const getLocalStorageKey = (key) => {
     return null;
   }
 };
-
-export const deleteLocalStorageKey = (key) => {
-  localStorage.removeItem(key);
-};
