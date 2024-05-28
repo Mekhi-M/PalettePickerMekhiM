@@ -1,4 +1,4 @@
-import palettesFromJSON from "../palettes.json";
+import palettesFromJSON from "../../palettes.json";
 import {
   setLocalStorageKey,
   getLocalStorageKey,
