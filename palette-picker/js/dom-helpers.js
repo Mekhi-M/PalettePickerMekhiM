@@ -159,13 +159,13 @@ export const makePaletteCard = (paletteObj) => {
 
 export const initPaletteCards = () => {
   // checks if there the palettes key from localStorage is empty
-  // if (getLocalStorageKey("palettes").length === 0) {
-  //   console.log(
-  //     "The stored palette list was empty. Initializing standard palette list"
-  //   );
-  //   // deletes the key right before localStorage is checked for the palettes key
-  //   deleteLocalStorageKey("palettes");
-  // }
+  if (getLocalStorageKey("palettes").length === 0) {
+    console.log(
+      "The stored palette list was empty. Initializing standard palette list"
+    );
+    // deletes the key right before localStorage is checked for the palettes key
+    deleteLocalStorageKey("palettes");
+  }
 
   // will set palettes from localStorage to the default palette set from the JSON
   if (!getLocalStorageKey("palettes")) {
